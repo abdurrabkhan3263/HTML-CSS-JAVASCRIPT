@@ -1,0 +1,826 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#main>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -10;
+    margin-top: 80px;
+}
+
+#nav {
+    height: 80px;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+    position: fixed;
+    z-index: 1;
+}
+
+#nav img {
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#nav img:hover {
+    scale: 1.1;
+}
+
+#nav .left-section {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#nav .bar{
+    display: none;
+}
+
+#nav .left-section h4 {
+    font-weight: 400;
+    font-size: 19px;
+    cursor: pointer;
+    position: relative;
+}
+
+#nav .left-section h4::after {
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    position: absolute;
+    bottom: -5;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav .left-section-dashed h4::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: -5;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav .left-section h4:hover::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: -5;
+    left: 0;
+}
+
+#nav .right-section {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 70px;
+    position: relative;
+    width: 35%;
+}
+
+#nav .right-section i {
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+}
+
+#nav .right-section #mov-search {
+    cursor: text;
+    height: 100%;
+    width: 250px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: #000;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+
+.search-section {
+    overflow: hidden;
+    /* width: 0%; */
+    overflow: hidden;
+    opacity: 1;
+    position: absolute;
+    left: -118;
+}
+
+.search-btn {
+    color: black;
+    background-color: #fff;
+    border: none;
+    font-size: 18px;
+    padding: 5px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+}
+
+.search-btn:hover {
+    border-radius: 0px;
+    scale: 1.07;
+}
+
+#nav .right-section i::after {
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    position: absolute;
+    bottom: -5;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav .right-section i:hover::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: -5;
+    left: 0;
+}
+
+.mobileSer {
+    display: none;
+}
+
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.459);
+    overflow: hidden;
+}
+
+
+
+.page1 {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pages {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 50px;
+    padding-block-start: 100px;
+}
+
+
+.page1>h3 {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.all-cards {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.all-cards>h1 {
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 15px 0;
+    border-radius: 2.3rem;
+    position: relative;
+}
+
+.all-cards>h1::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 35%;
+    background-color: rgb(255, 0, 0);
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cards {
+    height: 370px;
+    width: 280px;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+
+.cards>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.movies-section {
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+    padding-block-start: 10px;
+    flex-wrap: wrap;
+}
+
+.movies-section .mov-sec {
+    padding: 10px 25px;
+    background-color: gray;
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+#mov-sec-w {
+    background-color: #fff;
+    color: gray;
+    border-radius: 2rem;
+    cursor: pointer;
+    padding: 10px 25px;
+    user-select: none;
+}
+
+.cat-m-card {
+    margin-top: 20px;
+}
+
+.cat-m-card>h3 {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.page2 {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page2>h3 {
+    font-weight: 500;
+    font-size: 22px;
+    background-color: crimson;
+    color: white;
+    padding: 10px 25px;
+    width: 200px;
+    white-space: nowrap;
+    border-radius: 1.7rem;
+    cursor: pointer;
+    user-select: none;
+    margin: 10px 0;
+}
+
+.more-btn {
+    margin-bottom: 22px;
+    padding: 12px 22px;
+    border-radius: 1.7rem;
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+}
+
+.more-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#n-all-cards .cards {
+    margin-bottom: 30px;
+}
+
+
+/* MOVIES INFORMATION SECTION START */
+
+#info-main {
+    height: 100vh;
+    width: 100%;
+    background-color: crimson;
+    padding: 110px 50px 30px 200px;
+    background-image: url(img/b1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.info-img {
+    height: 65%;
+    width: 350px;
+    border-radius: 0.5rem;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 0 19px -3px rgba(255, 255, 255, 0.4);
+    border: 3px solid white;
+}
+
+.info-img>img {
+    width: 100%;
+    height: 100%;
+}
+
+.mov-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+    height: 100%;
+    width: 70%;
+    gap: 10px;
+}
+
+.mov-name h1 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.facts {
+    margin-bottom: 15px;
+}
+
+.facts .certification {
+    border: 1px solid white;
+    padding: 5px 5px;
+    margin-right: 5px;
+    font-weight: 300;
+}
+
+.mov-date {
+    font-weight: 300;
+}
+
+.genres {
+    color: white;
+    font-weight: 300;
+}
+
+.mov-time {
+    font-weight: 300;
+}
+
+.rating>h3 {
+    font-size: 40px;
+}
+
+.Overview h3 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.Overview p {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.tagline {
+    font-size: 18px;
+}
+
+/* MOVIES INFROMATINO SECTION END */
+
+
+
+/* LOADER */
+
+.info-loader {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    width: 60px;
+    aspect-ratio: 1;
+    --g: conic-gradient(from -90deg at 10px 10px,#fff 90deg,#0000 0);
+    background: var(--g), var(--g), var(--g);
+    background-size: 50% 50%;
+    animation: l18 1s infinite;
+  }
+  @keyframes l18 {
+     0%   {background-position:0     0, 10px 10px, 20px 20px}
+     33%  {background-position:-30px 0, 10px 10px, 20px 20px}
+     66%  {background-position:-30px 0, 10px 40px, 20px 20px}
+     100% {background-position:-30px 0, 10px 40px, 50px 20px}
+  }
+
+.heading {
+    width: 100%;
+    height: 50px;
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+#Newly {
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+
+#Newly::after {
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+#Newly:hover::after {
+    width: 100%;
+}
+
+.cards:hover {
+    box-shadow: 5px 6px 40px rgba(255, 255, 255, 0.116);
+}
+
+.num-value{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.num-facts{
+    width: 30%;
+    height: 30px;
+    background-color: crimson;
+    color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    padding-inline: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.theme{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+@media (max-width:1030px) {
+    #nav .bar{
+        display: block;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    #nav {
+        padding: 0px 25px;
+    }
+
+    #nav .left-section {
+        display: none;
+    }
+
+    #nav .right-section {
+        display: none;
+    }
+    .mobileSer {
+        display: flex;
+        height: 100%;
+        width: 80%;
+        background-color: red;
+        position: fixed;
+        flex-direction: column;
+        gap: 25px;
+        z-index: 9;
+        right: -100%;
+        padding: 50px 20px 0 20px;
+        transition: all 0.4s ease;
+    }
+
+    #crossBtn{
+        font-size: 25px;
+    }
+
+    .left-section {
+        gap: 10px;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-section h4{
+        font-size: 28px;
+    }
+    .search-section {
+        overflow: auto;
+        width: 100%;
+        height: 15%;
+        opacity: 1;
+        position: initial;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .mobileSer .search-section #mobileSer-input {
+        width: 100%;
+        height: 32px;
+        padding-inline: 10px;
+        font-size: 14px;
+        outline: none;
+        border: none;
+        border-radius: 0.5rem;
+        color: black;
+    }
+
+    .search-btn {
+        font-size: 14px;
+        padding: 7px 15px;
+        border-radius: 5px;
+    }
+
+    #info-main {
+        padding: 150px 50px 30px 50px;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .info-img {
+        height: 100%;
+        width: 420px;
+    }
+
+    .mov-info {
+        height: 100%;
+        width: 100%;
+        gap: 20px;
+        margin-left: 0px;
+    }
+
+    .mov-name h1 {
+        font-size: 40px;
+    }
+
+    .facts {
+        font-size: 22px;
+    }
+
+    .rating>h3 {
+        font-size: 55px;
+    }
+
+    .tagline {
+        font-size: 25px;
+    }
+
+    .Overview h3 {
+        font-size: 40px;
+        font-weight: 800;
+    }
+
+    .Overview p {
+        margin-top: 10px;
+        font-size: 23px;
+    }
+
+    .facts .certification {
+        padding: 5px 10px;
+    }
+}
+
+
+/* For Webkit-based browsers */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: lightskyblue;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: crimson;
+}
+
+
+
+@media (max-width : 477px) {
+    #nav .bar{
+        display: block;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    #nav {
+        padding: 0px 25px;
+    }
+
+    #nav .left-section {
+        display: none;
+    }
+
+    #nav .right-section {
+        display: none;
+    }
+    .mobileSer {
+        display: flex;
+        height: 100%;
+        width: 80%;
+        background-color: red;
+        position: fixed;
+        flex-direction: column;
+        gap: 25px;
+        z-index: 9;
+        right: -100%;
+        padding: 50px 20px 0 20px;
+        transition: all 0.4s ease;
+    }
+
+    #crossBtn{
+        font-size: 25px;
+    }
+
+    .left-section {
+        gap: 10px;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-section h4{
+        font-size: 28px;
+    }
+    .search-section {
+        overflow: auto;
+        width: 100%;
+        height: 15%;
+        opacity: 1;
+        position: initial;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .mobileSer .search-section #mobileSer-input {
+        width: 100%;
+        height: 32px;
+        padding-inline: 10px;
+        font-size: 14px;
+        outline: none;
+        border: none;
+        border-radius: 0.5rem;
+        color: black;
+    }
+
+    .search-btn {
+        font-size: 14px;
+        padding: 7px 15px;
+        border-radius: 5px;
+    }
+
+
+    .pages {
+        padding-inline: 25px;
+    }
+
+    .cards {
+        height: 480px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .more-btn {
+        margin-block: 20px;
+    }
+
+    .movies-section {
+        gap: 12px;
+        padding-block-start: 7px;
+    }
+
+    #Newly {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    /* INFO SECTION */
+    #info-main {
+        height: max-content;
+        padding: 100px 20px 10px 15px;
+        flex-direction: column;
+        align-items: start;
+        overflow-x: hidden;
+    }
+
+    .mov-info {
+        gap: 10px;
+        justify-content: start;
+        padding-bottom: 10px;
+    }
+
+    .info-img {
+        height: 100%;
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .mov-name h1 {
+        font-size: 30px;
+    }
+
+    .facts {
+        font-size: 13px;
+    }
+
+    .facts .certification {
+        padding: 0px 3px;
+        margin-right: 0px;
+    }
+
+    .rating>h3 {
+        font-size: 30px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    .Overview h3 {
+        font-size: 30px;
+        font-weight: 800;
+    }
+
+    .Overview p {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .all-cards>h1 {
+        font-size: 20px;
+    }
+    .all-cards>h1::after {
+        width: 70%;
+    }
+    .num-value {
+        gap: 5px;
+        flex-direction: column;
+    }
+    .num-facts {
+        width: 100%;
+    }
+}
